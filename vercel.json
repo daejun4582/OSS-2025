@@ -3,6 +3,14 @@
         {
             "source": "/",
             "destination": "/hw1/index.html"
+        },
+        {
+            "source": "/:file(style1|style2|example).html",
+            "destination": "/hw1/:file.html"
+        },
+        {
+            "source": "/css/:path*",
+            "destination": "/hw1/css/:path*"
         }
     ]
 }
