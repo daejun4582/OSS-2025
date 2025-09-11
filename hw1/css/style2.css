@@ -30,6 +30,7 @@ body {
 #menubar {
     width: 190px;
     float: right;
+
 }
 
 #main {
@@ -47,7 +48,7 @@ body {
     background-color: #F6DAD7;
     color: #d14836;
     padding: 10px;
-    margin-top: 10px;
+    /* margin-top: 10px; */
 }
 
 #bottom {
