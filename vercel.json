@@ -15,6 +15,14 @@
         {
             "source": "/css/:path*",
             "destination": "/hw1/css/:path*"
+        },
+        {
+            "source": "/hw2/:file(form_nostyle|form_style|form_js|form).html",
+            "destination": "/hw2/:file.html"
+        },
+        {
+            "source": "/hw2/css/:path*",
+            "destination": "/hw2/css/:path*"
         }
     ]
 }
