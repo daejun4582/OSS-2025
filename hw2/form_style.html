@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>Form (Styled) - Lab2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root{
+      --bg:#f7f7f9;
+      --panel:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --primary:#146EF5;
+      --border:#e5e7eb;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; padding:24px; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Helvetica,Arial,sans-serif;
+      background:var(--bg); color:var(--text);
+    }
+    h1{margin:0 0 8px; font-size:28px}
+    p{margin:0 0 20px; color:var(--muted)}
+
+    /* Panel / layout */
+    form{
+      max-width:800px; margin:0 auto; background:var(--panel);
+      padding:24px; border:1px solid var(--border); border-radius:12px;
+      box-shadow:0 2px 12px rgba(0,0,0,0.04);
+    }
+    fieldset{
+      margin:18px 0; padding:16px; border:1px solid var(--border); border-radius:10px;
+      background:#fff;
+    }
+    legend{
+      padding:0 8px; font-weight:700; color:#111; letter-spacing:.2px;
+    }
+
+    /* Labels & controls */
+    label{display:block; font-weight:600; margin:12px 0 6px}
+    input, select, textarea{
+      width:100%;
+      border:1px solid var(--border); border-radius:10px; background:#fff;
+      padding:12px 14px; font-size:15px; line-height:1.35;
+      outline:none; transition:border-color .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+
+    input::placeholder{color:#9ca3af}
+
+    input:focus, select:focus, textarea:focus{
+      border-color:var(--primary);
+      box-shadow:0 0 0 4px rgba(20,110,245,.15);
+    }
+
+    /* Radios & checkboxes */
+    input[type="radio"], input[type="checkbox"]{width:auto; margin-right:8px}
+    input[type="radio"], input[type="checkbox"]{accent-color:var(--primary)}
+    /* Keep their labels inline for compact groups */
+    p + label, p + label + label, p + label + label + label{display:inline-flex; align-items:center; gap:6px; margin-right:16px}
+
+    /* Number, range, color, file */
+    input[type="range"]{width:100%}
+    input[type="color"]{padding:0; height:44px; width:64px}
+    input[type="file"]{padding:10px}
+
+    /* Helper inputs that shouldn't be full width */
+    input[type="time"], input[type="date"]{max-width:260px}
+    input[type="number"]{max-width:200px}
+
+    /* Buttons */
+    button{cursor:pointer; border:0; border-radius:10px; padding:12px 16px; font-weight:700}
+    button[type="submit"]{background:var(--primary); color:#fff}
+    button[type="submit"]:hover{filter:brightness(.95)}
+    button[type="reset"]{background:#eef2ff; color:#3730a3; margin-left:8px}
+
+    /* Small screens */
+    @media (max-width:520px){
+      body{padding:16px}
+      form{padding:16px}
+      input[type="time"], input[type="date"], input[type="number"]{max-width:100%}
+    }
+  </style>
+</head>
+<body>
+  <h1>Form tag 연습 - With CSS (Lab2)</h1>
+  <p>과제 조건: 최소 10개 이상의 form element, 5종류 이상 포함. (필수: text, radio, checkbox, select, date, textarea / 선택: fieldset, legend, optgroup, color, datalist)</p>
+
+  <form action="#" method="post" novalidate>
+    <!-- 1) Personal Info -->
+    <fieldset>
+      <legend>1 Personal Info</legend>
+
+      <label for="name">이름 *</label>
+      <input type="text" id="name" name="name" required>
+      <br>
+
+      <label for="email">이메일 *</label>
+      <input type="email" id="email" name="email" required>
+      <br>
+
+      <label for="tel">전화번호</label>
+      <input type="tel" id="tel" name="tel" placeholder="010-1234-5678" pattern="^0\d{1,2}-\d{3,4}-\d{4}$">
+      <br>
+
+      <label for="birth">생년월일</label>
+      <input type="date" id="birth" name="birth">
+      <br>
+
+      <label for="color">좋아하는 색</label>
+      <input type="color" id="color" name="color" value="#146EF5">
+      <br>
+
+      <label for="country">국가</label>
+      <input list="country-list" id="country" name="country" placeholder="대한민국">
+      <datalist id="country-list">
+        <option value="대한민국"></option>
+        <option value="일본"></option>
+        <option value="중국"></option>
+        <option value="미국"></option>
+        <option value="필리핀"></option>
+      </datalist>
+    </fieldset>
+
+    <!-- 2) Account -->
+    <fieldset>
+      <legend>2 Account</legend>
+
+      <label for="userid">아이디 *</label>
+      <input type="text" id="userid" name="userid" required minlength="4" maxlength="16" autocomplete="username">
+      <br>
+
+      <label for="password">비밀번호 *</label>
+      <input type="password" id="password" name="password" required minlength="8" autocomplete="new-password">
+      <br>
+
+      <label for="avatar">프로필 사진</label>
+      <input type="file" id="avatar" name="avatar" accept="image/*">
+    </fieldset>
+
+    <!-- 3) Preferences -->
+    <fieldset>
+      <legend>3 Preferences</legend>
+
+      <p>성별</p>
+      <label><input type="radio" name="gender" value="male"> 남성</label>
+      <label><input type="radio" name="gender" value="female"> 여성</label>
+      <label><input type="radio" name="gender" value="other"> 기타</label>
+      <br>
+
+      <p>관심사 (복수 선택)</p>
+      <label><input type="checkbox" name="interest" value="sports"> 스포츠</label>
+      <label><input type="checkbox" name="interest" value="music"> 음악</label>
+      <label><input type="checkbox" name="interest" value="coding"> 코딩</label>
+      <br>
+
+      <label for="plan">희망 플랜</label>
+      <select id="plan" name="plan">
+        <optgroup label="무료">
+          <option value="free-basic">Basic</option>
+        </optgroup>
+        <optgroup label="유료">
+          <option value="pro">Pro</option>
+          <option value="business">Business</option>
+        </optgroup>
+      </select>
+      <br>
+
+      <label for="quantity">사용 인원 (1~10)</label>
+      <input type="number" id="quantity" name="quantity" min="1" max="10" value="1">
+      <br>
+
+      <label for="rating">만족도 (0~10)</label>
+      <input type="range" id="rating" name="rating" min="0" max="10" step="1" value="5">
+      <br>
+
+      <label for="website">웹사이트</label>
+      <input type="url" id="website" name="website" placeholder="https://">
+      <br>
+
+      <label for="time">통화 가능 시간</label>
+      <input type="time" id="time" name="time">
+    </fieldset>
+
+    <!-- 4) Address -->
+    <fieldset>
+      <legend>4 Address</legend>
+
+      <label for="address1">주소 1</label>
+      <input type="text" id="address1" name="address1" autocomplete="address-line1">
+      <br>
+
+      <label for="address2">주소 2</label>
+      <input type="text" id="address2" name="address2" autocomplete="address-line2">
+      <br>
+
+      <label for="city">도시</label>
+      <input type="text" id="city" name="city" autocomplete="address-level2">
+      <br>
+
+      <label for="zip">우편번호</label>
+      <input type="text" id="zip" name="zip" inputmode="numeric" pattern="\d{5}" placeholder="5자리">
+    </fieldset>
+
+    <!-- 5) Feedback -->
+    <fieldset>
+      <legend>5 Feedback</legend>
+
+      <label for="subject">주제</label>
+      <select id="subject" name="subject">
+        <option value="">-- 선택 --</option>
+        <option value="bug">버그 신고</option>
+        <option value="feature">기능 제안</option>
+        <option value="general">일반 문의</option>
+      </select>
+      <br>
+
+      <label for="message">메시지</label>
+      <textarea id="message" name="message" rows="5" cols="40" placeholder="자유롭게 작성하세요"></textarea>
+    </fieldset>
+
+    <!-- 6) Consent -->
+    <fieldset>
+      <legend>6 Consent</legend>
+      <label><input type="checkbox" name="tos" required> 이용약관에 동의합니다 *</label>
+      <br>
+      <label><input type="checkbox" name="newsletter" checked> 뉴스레터 수신</label>
+    </fieldset>
+
+    <button type="submit">제출</button>
+    <button type="reset">초기화</button>
+  </form>
+</body>
+</html>

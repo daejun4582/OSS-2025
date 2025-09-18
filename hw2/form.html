@@ -1,0 +1,109 @@
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <title>Lab4 - js를 활용한 동적 페이지 생성</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* 과제 수준의 간단한 스타일 */
+    body{font-family: Arial, Helvetica, sans-serif; margin:16px}
+    h1{font-size:22px; margin:0 0 8px}
+    p.desc{color:#555; font-size:14px; margin:0 0 12px}
+
+    .panel{max-width:720px; border:1px solid #ccc; border-radius:6px; padding:16px}
+    .row{display:flex; gap:8px; align-items:center}
+    .row + .row{margin-top:10px}
+
+    input[type="text"]{flex:1; min-width:0; padding:8px; border:1px solid #ccc; border-radius:4px; font-size:14px}
+    button{padding:8px 12px; border:1px solid #999; background:#eee; border-radius:4px; cursor:pointer}
+    button#addBtn{background:#e5eefc}
+    button#clearBtn{background:#fde68a}
+
+    ul#list{list-style:disc; margin:12px 0 0 22px; padding:0}
+    ul#list li{padding:6px 4px}
+    .empty{color:#666; font-size:13px; margin-top:8px}
+  </style>
+</head>
+<body>
+  <h1>Lab4 - 동적 목록 페이지</h1>
+  <p class="desc">Title, 추가버튼, 삭제버튼, 목록. 입력 후 <strong>추가</strong> 클릭(또는 Enter) 시 목록에 항목이 추가되고 입력창은 비워집니다. <strong>삭제</strong> 클릭 시 목록이 모두 삭제됩니다.</p>
+
+  <div class="panel">
+    <div class="row">
+      <label for="itemInput" style="min-width:52px">Title</label>
+      <input id="itemInput" type="text" placeholder="항목을 입력하세요" />
+      <button id="addBtn" type="button">추가</button>
+      <button id="clearBtn" type="button">삭제</button>
+    </div>
+
+    <div class="row">
+      <strong>목록</strong>
+    </div>
+    <ul id="list"></ul>
+    <div id="emptyState" class="empty">아직 항목이 없습니다.</div>
+  </div>
+
+  <script>
+    // window.onload, document ready 유사 처리
+    window.onload = function(){
+      var input = document.getElementById('itemInput');
+      var addBtn = document.getElementById('addBtn');
+      var clearBtn = document.getElementById('clearBtn');
+      var list = document.getElementById('list');
+      var empty = document.getElementById('emptyState');
+
+      function updateEmpty(){
+        empty.style.display = list.children.length ? 'none' : 'block';
+      }
+
+      function addItem(){
+        var text = (input.value || '').trim();
+        if(!text){
+          alert('내용을 입력하세요.');
+          input.focus();
+          return;
+        }
+        var li = document.createElement('li');
+        li.textContent = text;
+        list.appendChild(li);
+        input.value = '';
+        input.focus();
+        updateEmpty();
+      }
+
+      function clearAll(){
+        if(!list.children.length){ return; }
+        // 확인 대화상자 (confirm 사용 예)
+        if(confirm('목록을 모두 삭제하시겠습니까?')){
+          list.innerHTML = '';
+          updateEmpty();
+        }
+      }
+
+      // 이벤트 바인딩 (onclick, onkeydown)
+      addBtn.onclick = addItem;           // onclick
+      clearBtn.onclick = clearAll;        // onclick
+
+      // Enter로 추가 (onkeydown)
+      input.onkeydown = function(e){
+        if(e.key === 'Enter') addItem();
+      };
+
+      // 버튼 hover 안내 (onmouseover / onmouseout)
+      addBtn.onmouseover = function(){ addBtn.textContent = '추가 (Enter)'; };
+      addBtn.onmouseout  = function(){ addBtn.textContent = '추가'; };
+
+      clearBtn.onmouseover = function(){ clearBtn.textContent = '삭제 (전체)'; };
+      clearBtn.onmouseout  = function(){ clearBtn.textContent = '삭제'; };
+
+      // 초기 상태 표시
+      updateEmpty();
+    };
+
+    // document.onready 대용 (권장: DOMContentLoaded)
+    // document.addEventListener('DOMContentLoaded', function(){ /* ready 시 실행할 코드 */ });
+  </script>
+</body>
+</html>
