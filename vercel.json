@@ -23,6 +23,14 @@
         {
             "source": "/hw2/css/:path*",
             "destination": "/hw2/css/:path*"
+        },
+        {
+            "source": "/hw2-2/:file(index|add|edit|view).html",
+            "destination": "/hw2-2/:file.html"
+        },
+        {
+            "source": "/hw2-2/css/:path*",
+            "destination": "/hw2-2/css/:path*"
         }
     ]
 }

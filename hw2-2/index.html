@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>도서관리 - 목록</title>
+    <!-- Bootstrap 5.3 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="my.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">📚 도서관리</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample"
+                aria-controls="navbarsExample" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExample">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">목록</a></li>
+                    <li class="nav-item"><a class="nav-link" href="add.html">추가</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1 class="h3 mb-0">도서 목록</h1>
+            <a href="add.html" class="btn btn-primary">+ 추가</a>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-striped align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">제목</th>
+                        <th scope="col">저자</th>
+                        <th scope="col">출판사</th>
+                        <th scope="col">출판년도</th>
+                        <th scope="col">ISBN</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td><a href="view.html">클린 코드</a></td>
+                        <td>로버트 C. 마틴</td>
+                        <td>인사이트</td>
+                        <td>2013</td>
+                        <td>9788966260959</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td><a href="view.html">리팩터링</a></td>
+                        <td>마틴 파울러</td>
+                        <td>한빛미디어</td>
+                        <td>2019</td>
+                        <td>9791162241882</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td><a href="view.html">자바의 정석</a></td>
+                        <td>남궁성</td>
+                        <td>도우출판</td>
+                        <td>2016</td>
+                        <td>9788994492032</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td><a href="view.html">모던 자바스크립트</a></td>
+                        <td>이웅모</td>
+                        <td>위키북스</td>
+                        <td>2020</td>
+                        <td>9791158392239</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td><a href="view.html">파이썬 완벽 가이드</a></td>
+                        <td>데이브 비즐리</td>
+                        <td>길벗</td>
+                        <td>2022</td>
+                        <td>9791165219482</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td><a href="view.html">컴퓨터 네트워킹</a></td>
+                        <td>제임스 커로즈</td>
+                        <td>피어슨</td>
+                        <td>2021</td>
+                        <td>9780135927385</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td><a href="view.html">운영체제</a></td>
+                        <td>에이브러햄 실버샤츠</td>
+                        <td>한빛아카데미</td>
+                        <td>2021</td>
+                        <td>9791156645023</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">8</th>
+                        <td><a href="view.html">딥러닝 입문</a></td>
+                        <td>사이토 고키</td>
+                        <td>한빛미디어</td>
+                        <td>2019</td>
+                        <td>9791162242025</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">9</th>
+                        <td><a href="view.html">통계학 입문</a></td>
+                        <td>프리드먼</td>
+                        <td>한국맥그로힐</td>
+                        <td>2017</td>
+                        <td>9788962183924</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">10</th>
+                        <td><a href="view.html">선형대수학</a></td>
+                        <td>Gilbert Strang</td>
+                        <td>Cengage</td>
+                        <td>2016</td>
+                        <td>9780030105678</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
