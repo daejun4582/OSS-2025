@@ -1,0 +1,124 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "클린 코드",
+      "author": "로버트 C. 마틴",
+      "publisher": "인사이트",
+      "year": 2013,
+      "isbn": "9788966260959",
+      "price": 28000,
+      "category": "프로그래밍"
+    },
+    {
+      "title": "리팩터링",
+      "author": "마틴 파울러",
+      "publisher": "한빛미디어",
+      "year": 2019,
+      "isbn": "9791162241882",
+      "price": 42000,
+      "category": "프로그래밍",
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "title": "자바의 정석",
+      "author": "남궁성",
+      "publisher": "도우출판",
+      "year": 2016,
+      "isbn": "9788994492032",
+      "price": 32000,
+      "category": "프로그래밍"
+    },
+    {
+      "id": "4",
+      "title": "모던 자바스크립트",
+      "author": "이웅모",
+      "publisher": "위키북스",
+      "year": 2020,
+      "isbn": "9791158392239",
+      "price": 40000,
+      "category": "프로그래밍"
+    },
+    {
+      "id": "5",
+      "title": "파이썬 완벽 가이드",
+      "author": "데이브 비즐리",
+      "publisher": "길벗",
+      "year": 2022,
+      "isbn": "9791165219482",
+      "price": 45000,
+      "category": "프로그래밍"
+    },
+    {
+      "id": "6",
+      "title": "컴퓨터 네트워킹",
+      "author": "제임스 커로즈",
+      "publisher": "피어슨",
+      "year": 2021,
+      "isbn": "9780135927385",
+      "price": 50000,
+      "category": "네트워크"
+    },
+    {
+      "id": "7",
+      "title": "운영체제",
+      "author": "에이브러햄 실버샤츠",
+      "publisher": "한빛아카데미",
+      "year": 2021,
+      "isbn": "9791156645023",
+      "price": 42000,
+      "category": "시스템"
+    },
+    {
+      "id": "8",
+      "title": "딥러닝 입문",
+      "author": "사이토 고키",
+      "publisher": "한빛미디어",
+      "year": 2019,
+      "isbn": "9791162242025",
+      "price": 30000,
+      "category": "인공지능"
+    },
+    {
+      "id": "9",
+      "title": "통계학 입문",
+      "author": "프리드먼",
+      "publisher": "한국맥그로힐",
+      "year": 2017,
+      "isbn": "9788962183924",
+      "price": 38000,
+      "category": "수학"
+    },
+    {
+      "id": "10",
+      "title": "선형대수학",
+      "author": "Gilbert Strang",
+      "publisher": "Cengage",
+      "year": 2016,
+      "isbn": "9780030105678",
+      "price": 55000,
+      "category": "수학"
+    },
+    {
+      "id": "11",
+      "title": "알고리즘 문제 해결 전략",
+      "author": "구종만",
+      "publisher": "인사이트",
+      "year": 2012,
+      "isbn": "9788966260546",
+      "price": 45000,
+      "category": "알고리즘"
+    },
+    {
+      "id": "12",
+      "title": "데이터베이스 시스템",
+      "author": "Abraham Silberschatz",
+      "publisher": "한빛아카데미",
+      "year": 2020,
+      "isbn": "9791156645016",
+      "price": 48000,
+      "category": "데이터베이스"
+    }
+  ]
+}

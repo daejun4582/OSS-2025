@@ -31,6 +31,14 @@
         {
             "source": "/hw2-2/css/:path*",
             "destination": "/hw2-2/css/:path*"
+        },
+        {
+            "source": "/hw4-1/:file(my_ajax).html",
+            "destination": "/hw4-1/:file.html"
+        },
+        {
+            "source": "/hw4-1/:file(my_data).json",
+            "destination": "/hw4-1/:file.json"
         }
     ]
 }

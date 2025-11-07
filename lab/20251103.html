@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-11-03</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+
+<body>
+    <span id="div_01" style="position: absolute;">div_01 des</span>
+    <br />
+    <button id="btn_disappear">disappear</button>
+    <button id="btn_fontcolor">색깔 바꾸기</button>
+    <button id="btn_position">positon 바꾸기</button>
+
+    <script>
+        // let div_01 = document.getElementById("div_01")
+        // let div_o1jq = $("#div_01");
+        // alert(div_o1jq.html())
+
+        $(function () {
+            $("#btn_disappear").click(() => {
+                alert("disappear!");
+                // $(this).hide();
+                $("#div_01").remove();
+            })
+
+            $("#btn_fontcolor").click(() => {
+                $("#div_01").css("color", "red");
+            })
+
+            $("#btn_position").click(() => {
+                alert("moving");
+                $("#div_01").animate({ left: "250px" });
+            })
+        })
+
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+            document.getElementById("demo").innerHTML = this.responseText;
+        }
+        xhttp.open("GET","demo_get.php");
+        xhttp.send();
+    </script>
+
+    <style>
+        #div_01 {
+            background-color: red;
+        }
+    </style>
+</body>
+
+</html>
