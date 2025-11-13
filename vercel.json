@@ -39,6 +39,14 @@
         {
             "source": "/hw4-1/:file(my_data).json",
             "destination": "/hw4-1/:file.json"
+        },
+        {
+            "source": "/hw4-2/:file(index).html",
+            "destination": "/hw4-2/:file.html"
+        },
+        {
+            "source": "/hw4-2/",
+            "destination": "/hw4-2/index.html"
         }
     ]
 }
