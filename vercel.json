@@ -33,6 +33,10 @@
             "destination": "/hw2-2/index.html"
         },
         {
+            "source": "/hw2-2/my.css",
+            "destination": "/hw2-2/my.css"
+        },
+        {
             "source": "/hw2-2/css/:path*",
             "destination": "/hw2-2/css/:path*"
         },
