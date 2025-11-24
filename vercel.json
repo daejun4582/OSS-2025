@@ -29,6 +29,10 @@
             "destination": "/hw2-2/:file.html"
         },
         {
+            "source": "/hw2-2/",
+            "destination": "/hw2-2/index.html"
+        },
+        {
             "source": "/hw2-2/css/:path*",
             "destination": "/hw2-2/css/:path*"
         },
